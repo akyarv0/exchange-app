@@ -76,9 +76,10 @@
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
   .currency-div {
-    width: 100%;
+    width: 80%;
     height: auto;
-    padding: 10px;
+
+    margin-top: 30px;
   }
 
   .title {
