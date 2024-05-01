@@ -1,44 +1,46 @@
 .currency-div {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 80px;
   flex-direction: column;
   gap: 10px;
   width: 650px;
   height: 250px;
-  background-color: #f2f2f2;
+  background-image: url(../images/currency-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 10px;
   border: 1px solid black;
-  padding: 20px;
+  /* Göz alıcı renkler */
+  background-color: #2e86de; /* Mavi tonu */
+  color: white; /* Beyaz yazı rengi */
 }
+
 .title {
-  margin-top: -40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black;
+  background-color: #0c3f04; /* Yeşil tonu */
   color: antiquewhite;
-  border: 1px solid wheat;
   border-radius: 10px;
-  padding: 0 10px;
+  margin-bottom: 50px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 0;
   width: 100%;
+  height: 50px;
 }
 
-.amount {
-  width: 100px;
-  height: 30px;
-}
-
+.amount,
 .from-currency-option,
-.to-currency-option {
-  width: 80px;
-  height: 30px;
-}
+.to-currency-option,
 .result {
   width: 100px;
   height: 30px;
+  background-color: #e6b93e; /* Turuncu tonu */
+  color: black; /* Siyah yazı rengi */
+  
 }
 
 .input-div {
@@ -48,21 +50,26 @@
   justify-content: center;
   align-items: center;
 }
+
 .convert-button {
+  margin: auto;
   width: 100px;
   height: 30px;
-  background-color: wheat;
+  background-color: #0c3f04; /* Kahverengi tonu */
   border: 1px solid black;
   border-radius: 10px;
-  margin-top: 20px; 
+  margin-top: 20px;
   cursor: pointer;
-  &&:hover {
-    background-color: green;
-    color: white;
-  }
-  &&:active {
-    background-color: rgb(2, 148, 2);
-    color: white;
-    transform: scale(0.9);
-  }
+  color: bisque;
+}
+
+.convert-button:hover {
+  background-color: #27ae60; /* Daha koyu yeşil tonu */
+  color: white;
+}
+
+.convert-button:active {
+  background-color: #0c3f04; /* Daha koyu mavi tonu */
+  color: white;
+  transform: scale(0.9);
 }

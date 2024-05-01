@@ -40,12 +40,19 @@ setCurrencyOptions(Object.keys(response.data.data));
         <h3>CURRENCY CONVERTER</h3>
       </div>
       <div className="input-div">
-        <input
-          type="number"
-          className="amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
+      <input
+      type="number"
+      className="amount"
+      value={amount}
+      onChange={(e) => {
+        if (e.target.value >= 1) {
+          setAmount(e.target.value);
+        }
+      }}
+      min="0" // Negatif sayıların girilmesini engeller
+      // pattern="[0-9]*" // Opsiyonel: Sadece rakam girilmesini sağlar
+    />
+    
         <select
           name=""
           id=""
@@ -76,6 +83,7 @@ setCurrencyOptions(Object.keys(response.data.data));
           className="result"
           value={result}
           onChange={(e) => setResult(e.target.value)}
+          readOnly
         />
       </div>
       <button className="convert-button " onClick={exchange}>
