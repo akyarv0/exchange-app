@@ -16,7 +16,7 @@ const Currency = () => {
           <option value="">EUR</option>
           <option value="">TL</option>
         </select>
-        <FaArrowAltCircleRight style={{ fontSize: "80px" }} />
+        <FaArrowAltCircleRight style={{ fontSize: "40px" }} />
         <select name="" id="" className="to-currency-option">
           <option value="">TL</option>
           <option value="">USD</option>
@@ -24,6 +24,7 @@ const Currency = () => {
         </select>
         <input type="number" name="" id="" className="result" />
       </div>
+     <button className="convert-button ">CONVERT</button>
     </div>
   );
 };
