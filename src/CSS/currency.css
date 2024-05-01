@@ -60,4 +60,9 @@
     background-color: green;
     color: white;
   }
+  &&:active {
+    background-color: rgb(2, 148, 2);
+    color: white;
+    transform: scale(0.9);
+  }
 }
