@@ -1,3 +1,4 @@
+/* Default styles */
 .currency-div {
   display: flex;
   margin-top: 80px;
@@ -11,7 +12,6 @@
   background-repeat: no-repeat;
   border-radius: 10px;
   border: 1px solid black;
-  /* Göz alıcı renkler */
   background-color: #2e86de; /* Mavi tonu */
   color: white; /* Beyaz yazı rengi */
 }
@@ -40,7 +40,6 @@
   height: 30px;
   background-color: #e6b93e; /* Turuncu tonu */
   color: black; /* Siyah yazı rengi */
-  
 }
 
 .input-div {
@@ -72,4 +71,32 @@
   background-color: #0c3f04; /* Daha koyu mavi tonu */
   color: white;
   transform: scale(0.9);
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .currency-div {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+
+  .amount,
+  .from-currency-option,
+  .to-currency-option,
+  .result {
+    width: 80px;
+    height: 25px;
+  }
+
+  .convert-button {
+    width: 80px;
+    height: 25px;
+    margin-top: 15px;
+    font-size: 12px;
+  }
 }

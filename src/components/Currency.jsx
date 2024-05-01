@@ -64,7 +64,7 @@ setCurrencyOptions(Object.keys(response.data.data));
           <option key={currency}>{currency}</option>
         ))}
         </select>
-        <FaArrowAltCircleRight style={{ fontSize: "40px" }} />
+        <FaArrowAltCircleRight style={{ fontSize: "40px", color: "green" }} />
         <select
           name=""
           id=""
