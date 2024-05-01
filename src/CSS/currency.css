@@ -92,6 +92,7 @@
   .result {
     width: 80px;
     height: 25px;
+    margin: 5px;
   }
 
   .convert-button {
@@ -99,5 +100,6 @@
     height: 25px;
     margin-top: 15px;
     font-size: 12px;
+    margin-bottom: 10px;
   }
 }
