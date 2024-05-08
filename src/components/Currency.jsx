@@ -38,7 +38,7 @@ const Currency = () => {
     fetchCurrencies();
   }, []);
 
-  return (
+  return (<>
     <div className="currency-div">
       <div className="title">
         <h3>CURRENCY CONVERTER</h3>
@@ -94,6 +94,9 @@ const Currency = () => {
         CONVERT
       </button>
     </div>
+    <p className="footer" style={{ marginTop: "20px",color:"red", backgroundColor: "red" }}><a href="https://www.freecurrencyapi.com/">Powered by FreeCurrencyAPI </a>  </p>
+    </>
+
   );
 };
 
