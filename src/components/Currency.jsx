@@ -15,7 +15,9 @@ const Currency = () => {
 
   const exchange = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`);
+      const response = await axios.get(
+        `${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`
+      );
       setCurrencyOptions(Object.keys(response.data.data));
       const rate = response.data.data[toCurrency];
       const result = (rate * amount).toFixed(3);
@@ -38,65 +40,71 @@ const Currency = () => {
     fetchCurrencies();
   }, []);
 
-  return (<>
-    <div className="currency-div">
-      <div className="title">
-        <h3>CURRENCY CONVERTER</h3>
-      </div>
-      <div className="input-div">
-      <input
-      type="number"
-      className="amount"
-      value={amount}
-      onChange={(e) => {
-        if (e.target.value >= 1) {
-          setAmount(e.target.value);
-        }
-      }}
-      min="0" // Negatif sayıların girilmesini engeller
-      // pattern="[0-9]*" // Opsiyonel: Sadece rakam girilmesini sağlar
-    />
-    
-        <select
-          name=""
-          id=""
-          className="from-currency-option"
-          value={fromCurrency}
-          onChange={(e) => setFromCurrency(e.target.value)}
-        >
-        {currencyOptions.map((currency) => (
-          <option key={currency}>{currency}</option>
-        ))}
-        </select>
-        <FaArrowAltCircleRight style={{ fontSize: "40px", color: "green" }} />
-        <select
-          name=""
-          id=""
-          className="to-currency-option"
-          value={toCurrency}
-          onChange={(e) => setToCurrency(e.target.value)}
-        >
-         {currencyOptions.map((currency) => (
-          <option key={currency}>{currency}</option>
-        ))}
-        </select>
-        <input
-          type="number"
-          name=""
-          id=""
-          className="result"
-          value={result}
-         
-          readOnly
-        />
-      </div>
-      <button className="convert-button " onClick={exchange}>
-        CONVERT
-      </button>
-    </div>
-    <p className="footer" style={{ marginTop: "20px",color:"red", backgroundColor: "red" }}><a href="https://www.freecurrencyapi.com/">Powered by FreeCurrencyAPI </a>  </p>
-    </>
+  return (
+    <>
+      <div className="currency-div">
+        <div className="title">
+          <h3>CURRENCY CONVERTER</h3>
+        </div>
+        <div className="input-div">
+          <input
+            type="number"
+            className="amount"
+            value={amount}
+            onChange={(e) => {
+              if (e.target.value >= 1) {
+                setAmount(e.target.value);
+              }
+            }}
+            min="0" // Negatif sayıların girilmesini engeller
+            // pattern="[0-9]*" // Opsiyonel: Sadece rakam girilmesini sağlar
+          />
 
+          <select
+            name=""
+            id=""
+            className="from-currency-option"
+            value={fromCurrency}
+            onChange={(e) => setFromCurrency(e.target.value)}
+          >
+            {currencyOptions.map((currency) => (
+              <option key={currency}>{currency}</option>
+            ))}
+          </select>
+          <FaArrowAltCircleRight style={{ fontSize: "40px", color: "green" }} />
+          <select
+            name=""
+            id=""
+            className="to-currency-option"
+            value={toCurrency}
+            onChange={(e) => setToCurrency(e.target.value)}
+          >
+            {currencyOptions.map((currency) => (
+              <option key={currency}>{currency}</option>
+            ))}
+          </select>
+          <input
+            type="number"
+            name=""
+            id=""
+            className="result"
+            value={result}
+            readOnly
+          />
+        </div>
+        <button className="convert-button " onClick={exchange}>
+          CONVERT
+        </button>
+      </div>
+      <p
+        className="footer"
+        style={{ marginTop: "20px", color: "red", backgroundColor: "red" }}
+      >
+        <a href="https://www.freecurrencyapi.com/">
+          Powered by FreeCurrencyAPI{" "}
+        </a>{" "}
+      </p>
+    </>
   );
 };
 
